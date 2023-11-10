@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&family=Nosifer&family=Roboto:wght@100;400;500&display=swap');
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFF;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+/*Menu*/
+.menu{
+    width: 100%;
+    position: fixed;
+    background-color: black;
+    overflow: hidden;   
+    top: 0;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 200px;
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
