@@ -26,8 +26,8 @@ body {
 .menu ul {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
-    padding-right: 200px;
+    justify-content: flex-start;
+    padding-left: 200px;
 }
 
 .menu li a {
@@ -37,3 +37,40 @@ body {
     padding: 14px 16px;
     text-decoration: none;
 }
+
+/*Home*/
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/sandwhich1.jpg);
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+}
+
+.main-text{
+    color: white;
+    font-size: 30px;
+    text-transform: capitalize;
+    line-height: 1.1;
+    margin: 6px 0 10px;
+    text-align: left;
+    padding: 5px; /* Add padding to the text for separation */
+}
+
+h2 {
+    color: white;
+    text-align: left;
+    padding-left: 20px;
+}
+
+h2 span {
+    display: block;
+    color: #ff9900; /* Adjust the color for "Sandwich Bliss" */
+    text-align: left;
+    padding-left: 20px; /* Adjust the padding for "Sandwich Bliss" */
+    margin-bottom: 10px; /* Add margin to separate the two lines */
+}
+
