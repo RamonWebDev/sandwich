@@ -74,3 +74,33 @@ h2 span {
     margin-bottom: 10px; /* Add margin to separate the two lines */
 }
 
+.holder {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    gap: 1.5rem;
+    border: 5px;
+    border-style: solid;
+    border-color: blue;
+}
+
+.product{
+    width: 500px;
+    height: 500px;
+    border-style: solid;
+    border-color: red;
+}
+
+.product-img{
+    width: 75%;
+    height: auto;
+}
+
+.price{
+
+}
+
+.bx-cart{
+    font-size: 40px;
+    float: right;
+    align-self: flex-end;
+}
