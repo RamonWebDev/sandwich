@@ -7,7 +7,7 @@ body {
     font-family: Roboto, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FAFAFF;
+    background-color: white;
 }
 
 *{
@@ -21,6 +21,7 @@ body {
     background-color: black;
     overflow: hidden;   
     top: 0;
+    z-index: 1;
 }
 
 .menu ul {
@@ -74,33 +75,67 @@ h2 span {
     margin-bottom: 10px; /* Add margin to separate the two lines */
 }
 
+/*Sandwhich*/
+
 .holder {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    grid-template-columns: repeat(3, minmax(220px, auto));
     gap: 1.5rem;
     border: 5px;
-    border-style: solid;
-    border-color: blue;
 }
 
 .product{
-    width: 500px;
-    height: 500px;
-    border-style: solid;
-    border-color: red;
+    text-align: center; 
+    position: relative;
+    background-color: #f2f2f2;
+}
+
+.product:hover{
+    padding: 5px;
+    border: 1px solid black;
+    transition: 0.4s;
 }
 
 .product-img{
-    width: 75%;
+    width: 300px;
     height: auto;
 }
 
 .price{
-
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 .bx-cart{
-    font-size: 40px;
-    float: right;
-    align-self: flex-end;
+    position: absolute; 
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+@media(max-width: 1080px){
+    .holder{
+        margin: 0 auto;
+        width: 90%;
+    }
+    .section{
+        padding: 3rem 0 2rem;
+    }
+    .shop{
+        margin-top: 2rem !important;
+        grid-template-columns: repeat(1, minmax(260px, auto));
+    }
+}
+
+@media (max-width: 360px) {
+    .shop {
+        grid-template-columns: repeat(1, minmax(260px, auto));
+    }
+    .product {
+        margin-top: 1rem !important;
+    }
 }
