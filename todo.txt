@@ -1,4 +1,4 @@
 #todo
-create sandwhiches 
+Style sandwhiches 
 create dummy contact form 
 About us info
