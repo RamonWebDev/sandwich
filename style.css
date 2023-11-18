@@ -82,6 +82,7 @@ h2 span {
     grid-template-columns: repeat(3, minmax(220px, auto));
     gap: 1.5rem;
     border: 5px;
+    padding-top: 10px;
 }
 
 .product{
