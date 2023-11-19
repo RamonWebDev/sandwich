@@ -1,4 +1,4 @@
-#todo
-Style sandwhiches 
+#todo 
+create about us section
 create dummy contact form 
-About us info
+Create Shopping cart
