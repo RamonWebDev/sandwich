@@ -92,14 +92,18 @@ h2 span {
 }
 
 .product:hover{
-    padding: 5px;
+    padding-top: 10px;
     border: 1px solid black;
-    transition: 0.4s;
+}
+
+.product:hover .product-img {
+    transform: scale(1.1); /* Adjust the scaling factor as needed */
 }
 
 .product-img{
     width: 300px;
     height: auto;
+    transition: transform 0.4s; /* Add a transition for a smooth effect */
 }
 
 .price{
@@ -123,11 +127,51 @@ h2 span {
     background-color: black;
     color: white;
     text-align: center;
-    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .contact-text{
     color: red;
+    font-size: 25px;
+}
+
+.icon{
+    font-size: 25px;
+}
+
+.icon h4{
+    font-size: 20px;
+}
+
+.info {
+    margin-left: 20px; /* Adjust the margin as needed */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px; /* Adjust the maximum width as needed */
+}
+
+input[type=text], textarea{
+    border-radius: 4px;
+}
+
+.subbutton{
+    color: blue;
+}
+
+textarea{
+    width: 351px; 
+    height: 209px;
+}
+
+a:visited{
+    color: white;
 }
 
 @media(max-width: 1080px){
