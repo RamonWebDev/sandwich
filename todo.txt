@@ -1,3 +1,4 @@
 #todo 
 create dummy contact form 
+redesign about us section 
 Create Shopping cart
