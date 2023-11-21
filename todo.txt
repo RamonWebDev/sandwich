@@ -1,4 +1,6 @@
 #todo 
-create dummy contact form 
-redesign about us section 
 Create Shopping cart
+design cart layout
+create backend code for cart
+create backend code for adding items to cart
+create form backend code 
