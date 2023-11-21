@@ -162,7 +162,22 @@ input[type=text], textarea{
 }
 
 .subbutton{
-    color: blue;
+    border: 1px solid #3498db;
+    border-radius: 4px; /* Optional: Round the corners */
+    
+    /* Text color and font */
+    font-size: 16px;
+    font-weight: bold;
+    
+    /* Padding and Margin */
+    padding: 10px 20px;
+    margin: 5px;
+    
+    /* Cursor style */
+    cursor: pointer;
+    
+    /* Transition for smooth effects */
+    transition: background-color 0.3s ease;
 }
 
 textarea{
