@@ -1,6 +1,4 @@
 #todo 
-Create Shopping cart
-design cart layout
-create backend code for cart
 create backend code for adding items to cart
 create form backend code 
+make sandwhich menu smaller
