@@ -32,8 +32,19 @@ if(document.readyState == 'loading'){
 
 // Save to local storage
 function saveLocalStorage(){
-    var cartContentList = document.getElementById('itemstorage')
-    localStorage.setItem('favorites', cartContentList.outerHTML)
+    var cartContentList = document.getElementById('itemstorage');
+    var quantityInputs = document.getElementsByClassName('cart-quantity');
+    var quantities = [];
+
+    // Save cart items and quantities
+    for (let i = 0; i < quantityInputs.length; i++) {
+        var input = quantityInputs[i];
+        var quantity = input.value;
+        quantities.push(quantity);
+    }
+
+    localStorage.setItem('favorites', cartContentList.outerHTML);
+    localStorage.setItem('quantities', JSON.stringify(quantities));
 }
 
 // Load from local storage
@@ -42,9 +53,18 @@ function loadLocalStorage(){
     document.getElementById('itemstorage').outerHTML = localStorage.getItem('favorites');
     
     // Load total price and update the display total
-    let loadedTotalPrice = parseFloat(localStorage.getItem('totalPrice'))
+    let loadedTotalPrice = parseFloat(localStorage.getItem('totalPrice'));
     if(!isNaN(loadedTotalPrice)){
         document.getElementsByClassName('total-price')[0].innerText = '$' + loadedTotalPrice.toFixed(2);
+    }
+
+    // Load quantities
+    let quantities = JSON.parse(localStorage.getItem('quantities'));
+    if (quantities) {
+        var quantityInputs = document.getElementsByClassName('cart-quantity');
+        for (let i = 0; i < quantities.length && i < quantityInputs.length; i++) {
+            quantityInputs[i].value = quantities[i];
+        }
     }
 }
 
@@ -104,6 +124,7 @@ function quantityChanged(event){
     if(isNaN(input.value) || input.value <= 0) {
         input.value = 1;
     }
+    saveLocalStorage()
     updateTotal()
 }
 
@@ -118,19 +139,26 @@ function addCartClicked(event){
     updateTotal();
 }
 
-// Add a product to the cart
-function addProductToCart(title, price, productImg){
-    var cartShopBox = document.createElement('div');
-    cartShopBox.classList.add('cart-box')
+// Function to add a product to the cart
+function addProductToCart(title, price, productImg) {
     var cartItems = document.getElementsByClassName('cart-content')[0];
-    var cartItemsNames = cartItems.getElementsByClassName('cart-product-title')
-    for(let i = 0; i < cartItemsNames.length; i++){
-        if(cartItemsNames[i].innerText == title){
-            alert('You have already added this item to the cart')
+    var cartItemsBoxes = cartItems.getElementsByClassName('detail-box');
+
+    // Check if the product is already in the cart
+    for (let i = 0; i < cartItemsBoxes.length; i++) {
+        var cartBox = cartItemsBoxes[i];
+        var cartBoxTitle = cartBox.getElementsByClassName('cart-product-title')[0];
+        if (cartBoxTitle.innerText.toLowerCase() === title.toLowerCase()) {
+            alert('You have already added this item to the cart');
             return;
         }
     }
 
+    // Create a new cart box
+    var cartShopBox = document.createElement('div');
+    cartShopBox.classList.add('cart-box');
+
+    // Cart box HTML content
     var cartBoxContent = `
         <img src="${productImg}" alt="" class="cart-img">
         <div class="detail-box">
@@ -141,11 +169,16 @@ function addProductToCart(title, price, productImg){
         <!--Remove Cart-->
         <i class='bx bx-trash cart-remove'></i>`;
 
-    cartShopBox.innerHTML = cartBoxContent
-    cartItems.append(cartShopBox)
-    cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click', removeCartItem)
-    saveLocalStorage()
-    cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged)
+    // Set the HTML content
+    cartShopBox.innerHTML = cartBoxContent;
+
+    // Append the cart box to the cart items
+    cartItems.append(cartShopBox);
+
+    // Add event listeners for the new cart box
+    cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click', removeCartItem);
+    saveLocalStorage();
+    cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged);
 }
 
 // Update the total price in the cart
@@ -170,8 +203,9 @@ function updateTotal(){
     saveTotalPrice(total);
 }
 
+// Function to handle the form submission
 function infoSent(){
-    //getting info submitted by user
+    // Getting info submitted by the user
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
 
