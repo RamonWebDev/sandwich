@@ -169,3 +169,11 @@ function updateTotal(){
     // Function to get the total, including what is saved in storage
     saveTotalPrice(total);
 }
+
+function infoSent(){
+    //getting info submitted by user
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    alert('Dear ' + name + '. Thank you for the feedback. We will reach you at the email you entered: ' + email);
+}
