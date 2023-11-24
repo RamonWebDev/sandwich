@@ -191,6 +191,10 @@ img {
     padding: 5px; /* Add padding to the text for separation */
 }
 
+.c-us {
+    white-space: nowrap;
+}
+
 h2 {
     color: white;
     text-align: left;
@@ -339,5 +343,52 @@ a:visited{
     }
     .product {
         margin-top: 1rem !important;
+    }
+    .menu{
+        margin: 0;
+        padding: 0;
+    }
+    .menu ul {
+        padding: 0;
+    }
+    .cart {
+        width: 280px;
+      }
+    textarea{
+        width: 247px; 
+        height: 168px;
+    }
+    #cart-icon{
+        padding-bottom: 25px;
+    }
+    .c-us{
+        font-size: 5px;
+        width: 60px;
+    }
+}
+
+@media(max-width: 400px){
+    .cart{
+        width: 320px;
+    }
+    .menu{
+        margin: 0;
+        padding: 0;
+    }
+    .menu ul {
+        padding: 0;
+    }
+    #cart-icon{
+        margin-left: 50px;
+        margin-top: 7px;
+    }
+}
+
+@media(max-width: 810px) {
+    .menu{
+
+    }
+    .c-us{
+        font-size: 20px;
     }
 }
