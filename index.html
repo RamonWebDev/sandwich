@@ -14,7 +14,7 @@
             <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#order">Menu</a></li>
-            <li><a href="#ContactUs">Contact Us</a></li>
+            <li><a class="c-us" href="#ContactUs">Contact Us</a></li>
         </ul>
         <i id="cart-icon" class='bx bxs-cart'></i>
         </div>
@@ -96,11 +96,11 @@
             </div>
             <div class="info">
             <form action="">
-                <label class="name" for="name">Name: </label> <input type="text">
-                <label class="email" for="email">Email: </label> <input type="text">
+                <label for="name">Name: </label> <input id="name" type="text">
+                <label for="email">Email: </label> <input id="email" type="text">
                 <Label>Comment: </Label><br>
-                <textarea class="comment" name="" id="" cols="40" rows="10"></textarea>
-                <button class="subbutton" type="submit">Submit Info</button>
+                <textarea name="" id="comment" cols="40" rows="10"></textarea>
+                <button onclick="infoSent()" class="subbutton" type="submit">Submit Info</button>
             </form>
         </div>
         <footer>
