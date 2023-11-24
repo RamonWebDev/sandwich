@@ -186,6 +186,7 @@ function updateTotal(){
     var cartContent = document.getElementsByClassName("cart-content")[0];
     var cartBoxes = cartContent.getElementsByClassName("cart-box");
     var total = 0;
+    let tax = 0
     for(let i = 0; i < cartBoxes.length; i++){
         var cartBox = cartBoxes[i]
         var priceElement = cartBox.getElementsByClassName("cart-price")[0];
@@ -193,6 +194,8 @@ function updateTotal(){
         var price = parseFloat(priceElement.innerText.replace("$", ""));
         var quantity = quantityElement.value;
         total = total + (price * quantity);
+        tax = total * .07
+        total = tax + total;
     }
     // If price contains some cent value
     total = Math.round(total * 100) / 100
