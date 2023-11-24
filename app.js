@@ -20,13 +20,13 @@ cartIcon.onclick = function(){
 closeCart.onclick = function(){
     cart.classList.remove("active");
 }
-
+document.addEventListener('DOMContentLoaded', function() {
 // Check document readiness and perform actions accordingly
 if(document.readyState == 'loading'){
     loadLocalStorage()
     document.addEventListener('DOMContentLoaded', ready)
 }else{
-    localStorage()
+    localStorage
     ready();
 }
 
@@ -139,7 +139,8 @@ function addCartClicked(event){
     updateTotal();
 }
 
-// Function to add a product to the cart
+
+    // Function to add a product to the cart
 function addProductToCart(title, price, productImg) {
     var cartItems = document.getElementsByClassName('cart-content')[0];
     var cartItemsBoxes = cartItems.getElementsByClassName('detail-box');
@@ -181,6 +182,8 @@ function addProductToCart(title, price, productImg) {
     cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged);
 }
 
+
+
 // Update the total price in the cart
 function updateTotal(){
     var cartContent = document.getElementsByClassName("cart-content")[0];
@@ -198,13 +201,14 @@ function updateTotal(){
         total = tax + total;
     }
     // If price contains some cent value
-    total = Math.round(total * 100) / 100
+    total = (Math.round(total * 100) / 100).toFixed(2)
 
     document.getElementsByClassName('total-price')[0].innerText = '$' + total
 
     // Function to get the total, including what is saved in storage
     saveTotalPrice(total);
 }
+});
 
 // Function to handle the form submission
 function infoSent(){
