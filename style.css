@@ -256,6 +256,48 @@ h2 span {
     color: white;
 }
 
+.client-reviews{
+    background-color: #F3F4F6;
+    padding: 5% 10%
+
+}
+
+.reviews { 
+    text-align: center;
+}
+
+.reviews h3{
+    color: #111;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.reviews img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin: 10px 0;
+}
+
+.reviews p {
+    color: #707070;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+.reviews h2 {
+    font-size: 22px;
+    color: #000;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 2px;
+    text-align: center;
+    margin-right: 27px;
+}
+
 /*Contact Us*/
 .ContactUs{
     background-color: black;
@@ -367,7 +409,7 @@ a:visited{
     }
 }
 
-@media(max-width: 400px){
+@media(max-width: 500px){
     .cart{
         width: 320px;
     }
